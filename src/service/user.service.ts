@@ -1,40 +1,40 @@
-import User from "../model/user.model"
-import * as jwt from 'jsonwebtoken'
-class UserService extends User{
 
-    static async SignUp(userData: any){
+import dbConfig from "../db/knexfile";
+import knex from 'knex'
+import {omit} from 'lodash/fp'
+
+class UserService{
+   static async SignUp(userData){
+        const knexDB = knex(dbConfig[process.env.NODE_ENV])
         const {name, email, userPassword, role} = userData
-        try{
-            // const existingUser = await User.findOne({email})
-            // if(existingUser) return 
-            const user = new User({
+        try{ 
+            const user = await knexDB("users").insert({
                 name,
                 email,
                 password:userPassword,
-                role: role || 'user',
-                })
-            const newUser = await user.save()
+                role: role || "user"
+            })
+            const newUser = await knexDB('users').where('id', user[0]).first()
+            const wallet = await knexDB('user_wallet').insert({
+                userId: newUser.id   
+            })
             newUser.password = ''
             return newUser
         }catch(e){
+           console.log(e)
            throw new Error('Unable to Signup User')
         }
-    }
-   static async Login(userData: any){
-         const {email} = userData
+   }
+   static async Login(data){
+    const {email} = data
     try{
-        const user = await User.findOne({email: email})
-        if(!user) return 
+        const knexDB = knex(dbConfig[process.env.NODE_ENV])
+        const user = await knexDB('users').where({email}).first()
+        if(typeof user == undefined) return Promise.reject("User Exists")
         return user
     }catch(e){
-        throw new Error('Unable to Find User')
+       return e 
     }
-    }
-    static async FindOrCreate(email, ...Args){
-        let user = await User.findOne({email})
-        if(!user) return await User.create(Args)
-        return user
-    }
-    
+   } 
 }
 export default UserService;

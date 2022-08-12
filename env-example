@@ -1,5 +1,9 @@
-NODE_ENV='development
-DB_URL=mongodb://localhost:27017/football-fixtures
-PORT=5005
-REDIS_URL=
+NODE_ENV=development
+DB_USER=
+DB_DATABASE=
+DB_DATABASE_TEST=
+DB_PASSWORD=
+DB_SERVER=
+DB_PORT=
+PORT=5007
 JWT_SECRET=
