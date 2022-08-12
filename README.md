@@ -5,7 +5,8 @@
 * To start the application run `npm run start`
 
 ### Endpoints
-ALL `http://localhost:5007/`
+ALL `http://localhost:5007/`   // development
+ALL `heroku`                   // production
 
 ### Documentation
 
