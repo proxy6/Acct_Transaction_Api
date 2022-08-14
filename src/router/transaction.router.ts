@@ -22,7 +22,6 @@ router.post('/deposit', async (req: Request, res: Response, next: NextFunction)=
         if(typeof deposit == 'object') return res.status(201).json({success: true, message: `${value.amount} Deposited Successfully`})
         return res.status(404).json({error: deposit});
     }catch(e){
-      console.log(e)
       res.status(500).json({error: e})}
 
 })
@@ -43,7 +42,6 @@ router.post('/withdraw', async (req: Request, res: Response, next: NextFunction)
       if(typeof withdraw == 'object') return res.status(201).json({success: true, message: `${value.amount} Withdrawn from Wallet Successfully`})
       return res.status(404).json({error: withdraw});
     }catch(e){
-      console.log(e)
       res.status(500).json({error: e})
     }
     
@@ -65,7 +63,6 @@ router.post('/transfer', async (req: Request, res: Response, next: NextFunction)
        if(typeof withdraw == 'object') return res.status(201).json({success: true, message: `${value.amount} Transer Successfully`})
        return res.status(404).json({error: withdraw});
      }catch(e){
-       console.log(e)
        res.status(500).json({error: e})
      }
      

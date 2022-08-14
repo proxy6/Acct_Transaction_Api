@@ -34,7 +34,6 @@ class TransactionService{
             return userWallet
         
         }catch(e){
-            console.log(e)
             return e
         }
 
@@ -52,7 +51,6 @@ class TransactionService{
             await knexDB('user_wallet').where({userId}).update({amount: userNewAmt})
             await knexDB('user_wallet').where({userId: receiverId}).update({amount: receiverNewAmt})
             const transaction = await knexDB('transaction_logs').insert({userId, sender: userId, receiver: receiverId, amount, trx_type, description, reference})
-            console.log(transaction)
             return transaction
         }catch(e){
             return e

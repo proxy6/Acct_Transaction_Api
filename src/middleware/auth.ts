@@ -19,7 +19,6 @@ export const isAuthorized = (...role: string[])=> async (req: Request, res: Resp
     res.status(401).json({message:'User is not Authorized'});
    }
  } catch (err) {
-  console.log(err)
    res.status(401).json({message:'Unable To Complete Authentication'});
  }
 };

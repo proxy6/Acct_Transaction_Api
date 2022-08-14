@@ -6,7 +6,6 @@ import { parseValidationError } from '../util/error'
 const router = Router()
 router.post('/signup', async (req: Request, res: Response, next: NextFunction)=>{
     const { error, value } = signUpValidation.validate(req.body)
-    console.log(process.env.DB_DATABASE)
     if (error) {
       return res.status(400).json({
         error: {
