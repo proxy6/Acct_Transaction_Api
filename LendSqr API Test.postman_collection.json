@@ -1,0 +1,678 @@
+{
+	"info": {
+		"_postman_id": "021e1ff0-c754-4e77-ad74-26a9dd8a6893",
+		"name": "LendSqr API Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12362586"
+	},
+	"item": [
+		{
+			"name": "Identity",
+			"item": [
+				{
+					"name": "SignUp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"name\": \"Precious Kings\",\r\n\"email\": \"proxy111@gmail.com\",\r\n\"password\": \"19960000\",\r\n\"role\": \"user\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:{{PORT}}/identity/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"identity",
+								"signup"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Signup Fails- When Email Exist",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"name\": \"Precious Kings\",\r\n\"email\": \"proxy96966@gmail.coimm\",\r\n\"password\": \"19960000\",\r\n\"role\": \"user\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:{{PORT}}/identity/signup",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "{{PORT}}",
+									"path": [
+										"identity",
+										"signup"
+									]
+								}
+							},
+							"status": "Conflict",
+							"code": 409,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "39"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"27-5Ww2SCIzpf6jQ3WCz8vGlby706Y\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Aug 2022 12:39:10 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"error\": \"User Exists\"\n}"
+						},
+						{
+							"name": "SignUp Fails - When Request body is Empty or Incomplete",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"name\": \"Precious Kings\",\r\n\"email\": \"proxy96966@gmail.coimm\",\r\n\"role\": \"user\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:{{PORT}}/identity/signup",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "{{PORT}}",
+									"path": [
+										"identity",
+										"signup"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "66"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"42-de+3pcr0qJJBrSlXVvcz6CiVhsw\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Aug 2022 12:44:06 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": {\n        \"success\": false,\n        \"message\": [\n            \"\\\"password\\\" is required\"\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"proxy969666@gmail.com\",\r\n    \"password\": \"19960000\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:{{PORT}}/identity/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"identity",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Login - User Does not Exist",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"proxy969666@gmail.com\",\r\n    \"password\": \"19960000\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:{{PORT}}/identity/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "{{PORT}}",
+									"path": [
+										"identity",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "43"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2b-XuwNwikpYIcKTGQkqlG82mMNS0w\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 12 Aug 2022 03:02:54 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": {\n        \"message\": \"User Does not Exist\"\n    }\n}"
+						},
+						{
+							"name": "Login Successful",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"proxy969666@gmail.com\",\r\n    \"password\": \"19960000\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:{{PORT}}/identity/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "{{PORT}}",
+									"path": [
+										"identity",
+										"login"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "417"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1a1-ZSqFlEWqxC6+CB/kWqIHkQ3fMNI\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 12 Aug 2022 03:03:38 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"user\": {\n            \"id\": 8,\n            \"name\": \"Precious Kings\",\n            \"email\": \"proxy969666@gmail.com\",\n            \"password\": \"\",\n            \"role\": \"user\",\n            \"created_at\": \"2022-08-12T00:58:27.000Z\",\n            \"updated_at\": \"2022-08-12T00:58:27.000Z\"\n        },\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImVtYWlsIjoicHJveHk5Njk2NjZAZ21haWwuY29tIiwicm9sZSI6InVzZXIifSwiaWF0IjoxNjYwMjczNDE4LCJleHAiOjE2NjAzNTk4MTh9.BaPTrUrwEUJEIAaiNQ1LrRqj8gfz8vYrErM6be2AJGw\"\n    }\n}"
+						},
+						{
+							"name": "Login - Password Incorrect",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"lantunde@acbo.va\",\r\n    \"password\": \"19960000\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:{{PORT}}/identity/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "{{PORT}}",
+									"path": [
+										"identity",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "31"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1f-Y1QmM4yFXGgnTwLPBYigdAFazRI\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 12 Aug 2022 03:12:08 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Password Incorrect!\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Transaction",
+			"item": [
+				{
+					"name": "Deposit",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"amount\": 1000.00\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:{{PORT}}/transaction/deposit",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"transaction",
+								"deposit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Withdraw",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"amount\": 1000.00,\r\n    \"userId\": 4,\r\n    \"description\": \"School Fess\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:{{PORT}}/transaction/withdraw",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"transaction",
+								"withdraw"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Withdraw cannot Accept Negative Values as Amount",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"amount\": -1000.00,\r\n    \"userId\": 4,\r\n    \"description\": \"School Fess\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:{{PORT}}/transaction/withdraw",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "{{PORT}}",
+									"path": [
+										"transaction",
+										"withdraw"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "78"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4e-k2W23sDeaVeJW73I9IKbenxGAHY\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 11 Aug 2022 23:20:43 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": {\n        \"success\": false,\n        \"message\": [\n            \"\\\"amount\\\" must be a positive number\"\n        ]\n    }\n}"
+						},
+						{
+							"name": "Withdraw Successful",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"amount\": 1000.00,\r\n    \"userId\": 5,\r\n    \"description\": \"School Fess\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:{{PORT}}/transaction/withdraw",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "{{PORT}}",
+									"path": [
+										"transaction",
+										"withdraw"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "68"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"44-DP8tPiq7vhGyALcXc15H4SS6TCc\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 11 Aug 2022 23:25:43 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"1000 Withdrawn from Wallet Successfully\"\n}"
+						},
+						{
+							"name": "User/Wallet Does Not Exist",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"amount\": 1000.00,\r\n    \"userId\": 10,\r\n    \"description\": \"School Fess\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:{{PORT}}/transaction/withdraw",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "{{PORT}}",
+									"path": [
+										"transaction",
+										"withdraw"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "27"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1b-lrDITKitZdcn/+b+6eOXHZ0A1VY\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 11 Aug 2022 23:27:14 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"No Wallet Found\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Transfer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"amount\": 1000.00,\r\n    \"userId\": 10,\r\n    \"description\": \"School Fess\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:{{PORT}}/transaction/transfer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"transaction",
+								"transfer"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "PORT",
+			"value": "5007"
+		}
+	]
+}

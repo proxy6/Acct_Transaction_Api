@@ -30,7 +30,6 @@ class UserController{
            const token = await GenerateSignature({data:{email:user.email, _id: user._id, role: user.role}})
            user.password = ''
            const returnedUser = {user, token}
-           console.log(returnedUser)
            return returnedUser 
         }else{
           return Promise.reject('Password Incorrect')

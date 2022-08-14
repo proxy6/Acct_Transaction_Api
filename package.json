@@ -29,6 +29,7 @@
     "@types/uuid": "^8.3.4",
     "@typescript-eslint/eslint-plugin": "^5.30.6",
     "@typescript-eslint/parser": "^5.30.6",
+    "cross-env": "^7.0.3",
     "eslint": "^8.19.0",
     "jest": "^28.1.3",
     "jest-mock-extended": "^2.0.7",
@@ -44,8 +45,8 @@
     "dev": "nodemon",
     "build": "rimraf ./dist && tsc",
     "start": "npm run build && node dist/src/index.js",
-    "test": "jest",
-    "migrate": "knex migrate:latest  --knexfile src/db/knexfile.ts",
+    "test": "cross-env NODE_ENV=test jest --coverage",
+    "migrate": "cross-env NODE_ENV=development knex migrate:latest  --knexfile src/db/knexfile.ts",
     "seed": "knex seed:run --knexfile src/db/knexfile.ts",
     "migrate:down": "knex migrate:down --knexfile src/db/knexfile.ts",
     "make:migrate:userwallet": "knex migrate:make user_wallet --knexfile src/db/knexfile.ts"
