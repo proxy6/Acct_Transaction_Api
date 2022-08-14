@@ -1,8 +1,9 @@
 FROM node:14.16-alpine as development
-WORKDIR /src
+WORKDIR /lendapi
 COPY package*.json ./
 RUN npm install
 COPY . .
+RUN npm run migrate
 RUN npm run build
 
 
