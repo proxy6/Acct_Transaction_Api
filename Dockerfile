@@ -3,7 +3,7 @@ WORKDIR /lendapi
 COPY package*.json ./
 RUN npm install
 COPY . .
-RUN npm run migrate
+RUN npm run migrate-prod
 RUN npm run build
 
 
