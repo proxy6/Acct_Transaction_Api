@@ -13,3 +13,4 @@ export async function seed(knex: Knex): Promise<void> {
         {id: 3,  userId: 3, amount: 1000.10}
     ]);
 };
+
