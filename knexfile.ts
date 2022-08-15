@@ -9,11 +9,11 @@ const dbConfig: { [key: string]: Knex.Config } = {
   production: {
     client: "mysql",
     connection: {
-      host : config.DB_SERVER,
-      port : parseInt(config.DB_PORT),
-      database: config.DB_DATABASE,
-      user:config.DB_USER,
-      password: config.DB_PASSWORD
+      host : 'db4free.net',
+      port : 3306,
+      database: 'lenddb',
+      user:'lenddb_root',
+      password: 'lenddb_root'
     },
     pool: {
       min: 2,
