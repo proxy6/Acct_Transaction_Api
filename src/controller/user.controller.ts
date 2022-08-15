@@ -32,7 +32,7 @@ class UserController{
            const returnedUser = {user, token}
            return returnedUser 
         }else{
-          return Promise.reject('Password Incorrect')
+          return Promise.reject('User or Password Incorrect')
         }   
     }catch(e){
         return e

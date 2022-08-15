@@ -30,7 +30,7 @@ class UserService{
     try{
         const knexDB = knex(dbConfig[process.env.NODE_ENV])
         const user = await knexDB('users').where({email}).first()
-        if(typeof user == undefined) return Promise.reject("User Does Not Exists")
+        if(typeof user == undefined) return Promise.reject("User or Password Incorrect")
         return user
     }catch(e){
        return e 
