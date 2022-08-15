@@ -12,7 +12,7 @@ COPY package*.json ./
 RUN npm install
 COPY --from=development /lendapi/dist ./
 
-CMD ["node", "lendapi/index.js"]
+CMD ["node", "dist/index.js"]
 
 
 
