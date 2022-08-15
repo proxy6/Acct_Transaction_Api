@@ -4,7 +4,6 @@ import config from "./src/util/config";
 // dotenv.config({ debug: true })
 // Update with your config settings.
 // console.log(process.env)
-console.log(config.DB_DATABASE)
 const dbConfig: { [key: string]: Knex.Config } = {
   production: {
     client: "mysql",

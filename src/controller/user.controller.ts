@@ -12,9 +12,7 @@ class UserController{
       const existingUser = await UserService.Login({email, userPassword}); 
       if(typeof existingUser == 'object') return Promise.reject('User Exists');  
       const newUser = await UserService.SignUp({name, email, userPassword, role})
-      const token = await GenerateSignature({_id: newUser.id, role: newUser.role})
-      const returnedUser = {newUser, token}
-      return returnedUser 
+      return newUser
     }catch(e){
       return e
     }
@@ -27,7 +25,7 @@ class UserController{
         if(user == undefined) return user
         const validatePass = await validatePassword(password, user.password)
         if(validatePass == true){
-           const token = await GenerateSignature({data:{email:user.email, _id: user._id, role: user.role}})
+          const token = await GenerateSignature({_id: user.id, role: user.role})
            user.password = ''
            const returnedUser = {user, token}
            return returnedUser 
