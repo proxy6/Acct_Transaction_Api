@@ -57,11 +57,8 @@ describe('USER Controller', ()=>{
             response = await UserController.Signup({...Args})
         })
         it('returns new user details', ()=>{
-            expect(response).toHaveProperty('token')
             expect(Object.keys(response.newUser).sort()).toEqual(
-                ['id', 'name', 'email', 'role', 'created_at', 'updated_at'].sort()
-            )
-         
+                ['id', 'name', 'email', 'role', 'created_at', 'updated_at'].sort())
         })
         
         // it('returns status 400 with error message', ()=>{
@@ -77,7 +74,10 @@ describe('USER Controller', ()=>{
                response = await UserController.Login({dummyEmail, dummyPass })
             })
             it('returns user details if request succeeds', ()=>{
-                expect(response).toBe()
+                expect(response).toHaveProperty('token')
+                expect(Object.keys(response.user).sort()).toEqual([
+                   'id', 'name', 'email', 'role', 'created_at', 'updated_at'
+                ].sort())
             })
         })
     })
