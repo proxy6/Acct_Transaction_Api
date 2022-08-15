@@ -1,6 +1,6 @@
 import * as request from 'supertest'
 import knex, { Knex } from 'knex'
-import dbConfig from "../db/knexfile";
+import dbConfig from "../../knexfile";
 import {v4 as uuidv4} from 'uuid'
 import UserController from '../controller/user.controller';
 import { omit } from 'lodash/fp';

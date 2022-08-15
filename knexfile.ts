@@ -1,17 +1,19 @@
 import type { Knex } from "knex";
-import * as dotenv from 'dotenv'
-dotenv.config({ path: '../../.env', debug: true })
+import config from "./src/util/config";
+// import * as dotenv from 'dotenv'
+// dotenv.config({ debug: true })
 // Update with your config settings.
-
+// console.log(process.env)
+console.log(config.DB_DATABASE)
 const dbConfig: { [key: string]: Knex.Config } = {
   production: {
     client: "mysql",
     connection: {
-      host : process.env.SERVER,
-      port : parseInt(process.env.DB_PORT),
-      database: process.env.DB_DATABASE,
-      user: process.env.DB_USER,
-      password: process.env.DB_PASSWORD
+      host : config.DB_SERVER,
+      port : parseInt(config.DB_PORT),
+      database: config.DB_DATABASE,
+      user:config.DB_USER,
+      password: config.DB_PASSWORD
     },
     pool: {
       min: 2,
@@ -55,11 +57,11 @@ const dbConfig: { [key: string]: Knex.Config } = {
   staging: {
     client: "mysql",
     connection: {
-      host : process.env.SERVER,
-      port : parseInt(process.env.DB_PORT),
-      user : process.env.DB_USER,
-      password : process.env.DB_PASSWORD,
-      database : process.env.DB_DATABASE
+      host : config.DB_SERVER,
+      port : parseInt(config.DB_PORT),
+      database: config.DB_DATABASE,
+      user:config.DB_USER,
+      password: config.DB_PASSWORD
     },
     pool: {
       min: 2,

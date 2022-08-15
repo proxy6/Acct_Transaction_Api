@@ -1,7 +1,6 @@
 import TransactionService from "../service/transaction.service"
 import {v4 as uuidv4} from 'uuid' 
 import knex from "knex"
-import dbConfig from "src/db/knexfile"
 class TransactionController{
     static async Deposit(data){
         try{

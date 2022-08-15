@@ -1,5 +1,5 @@
 import knex from "knex";
-import dbConfig from "../db/knexfile";
+import dbConfig from "../../knexfile";
 class TransactionService{
     static async Deposit(data){
         const knexDB = knex(dbConfig[process.env.NODE_ENV])

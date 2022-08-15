@@ -1,5 +1,5 @@
 
-import dbConfig from "../db/knexfile";
+import dbConfig from "../../knexfile";
 import knex from 'knex'
 import {omit} from 'lodash/fp'
 
