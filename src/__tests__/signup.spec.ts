@@ -4,9 +4,9 @@ import dbConfig from "../../knexfile";
 import {v4 as uuidv4} from 'uuid'
 import UserController from '../controller/user.controller';
 import { omit } from 'lodash/fp';
-import app from 'src/server';
+import app from '../server';
 const knexDB = knex(dbConfig[process.env.NODE_ENV])
-const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+// const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 describe('USER Controller', ()=>{
     let response
     let dummyEmail = `${uuidv4().replace(/-/g, '')}@gmail.com`
@@ -17,9 +17,9 @@ describe('USER Controller', ()=>{
         password: dummyPass,
         role: 'user'
     }
-    beforeEach(async ()=>{
-        await sleep(2000);
-    })
+    // beforeEach(async ()=>{
+    //     await sleep(2000);
+    // })
     afterAll(async () => {
         await knexDB.destroy();
       });
@@ -55,6 +55,7 @@ describe('USER Controller', ()=>{
     
         beforeAll(async()=>{
             response = await UserController.Signup({...Args})
+            console.log(response)
         })
         it('returns new user details', ()=>{
             expect(Object.keys(response.newUser).sort()).toEqual(

@@ -12,7 +12,10 @@ export const isAuthorized = (...role: string[])=> async (req: Request, res: Resp
    const token = req.header('Authorization')?.replace('Bearer ', '');
    if (!token) return res.status(401).json({message: "User is not Authenticated"});
    const decoded = jwt.verify(token, SECRET_KEY);
+
    (req as CustomRequest).token = decoded;
+   console.log(decoded)
+   console.log(role.length)
     if(role.length && role.includes((decoded as JwtPayload).role)){
     next();
    }else{
