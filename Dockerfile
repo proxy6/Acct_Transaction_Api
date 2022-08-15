@@ -10,9 +10,9 @@ FROM node:14.16-alpine as production
 WORKDIR /dist
 COPY package*.json ./
 RUN npm install
-COPY --from=development /src/dist ./
+COPY --from=development /lendapi/dist ./
 
-CMD ["node", "src/index.js"]
+CMD ["node", "lendapi/index.js"]
 
 
 
