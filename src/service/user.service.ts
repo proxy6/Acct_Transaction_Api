@@ -8,17 +8,17 @@ class UserService{
         const knexDB = knex(dbConfig[process.env.NODE_ENV])
         const {name, email, userPassword, role} = userData
         try{ 
-            const user = await knexDB("users").insert({
+            const newUser = await knexDB("users").insert({
                 name,
                 email,
                 password:userPassword,
                 role: role || "user"
             })
-            const newUser = await knexDB('users').where('id', user[0]).first()
-            const wallet = await knexDB('user_wallet').insert({
-                userId: newUser.id   
+            const user = await knexDB('users').where('id', newUser[0]).first()
+            await knexDB('user_wallet').insert({
+                userId: user.id   
             })
-            const users = omit('password', newUser)
+            const users = omit('password', user)
             // newUser.password = ''
             return users
         }catch(e){

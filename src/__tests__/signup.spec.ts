@@ -7,12 +7,14 @@ import { omit } from 'lodash/fp';
 import app from 'src/server';
 const knexDB = knex(dbConfig[process.env.NODE_ENV])
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
-describe('USER SIGNUP Controller', ()=>{
+describe('USER Controller', ()=>{
     let response
+    let dummyEmail = `${uuidv4().replace(/-/g, '')}@gmail.com`
+    let dummyPass = uuidv4().replace(/-/g, '')
     let Args ={
         name: 'Dummy Name',
-        email: `${uuidv4().replace(/-/g, '')}@gmail.com`,
-        password:uuidv4().replace(/-/g, ''),
+        email: dummyEmail,
+        password: dummyPass,
         role: 'user'
     }
     beforeEach(async ()=>{
@@ -47,7 +49,8 @@ describe('USER SIGNUP Controller', ()=>{
     // });
         
     // })
-    describe('Request Succeeds if Request Payload is complete', ()=>{
+    describe('USER SIGNUP', ()=>{
+        describe('Request Succeeds if Request Payload is complete', ()=>{
         let response
     
         beforeAll(async()=>{
@@ -66,20 +69,31 @@ describe('USER SIGNUP Controller', ()=>{
         //     expect(response.body).toHaveProperty('error')
         // })
         
-    })
-    describe('Request Fails if Email is not Unique', ()=>{
-        // beforeAll(async()=>{
-        //     response = await UserController.Signup({...Args})
-    
-        // })
-        it('returns error message of Email Exists', ()=>{
-            console.log({...Args})
-            expect(async ()=>{
-                await UserController.Signup({...Args})
-            }).toThrowError("User Exists")
         })
-        
     })
+    describe('USER LOGIN', ()=>{
+        describe('Request Succeeds if user lofin completes', ()=>{
+            beforeAll(async()=>{
+               response = await UserController.Login({dummyEmail, dummyPass })
+            })
+            it('returns user details if request succeeds', ()=>{
+                expect(response).toBe()
+            })
+        })
+    })
+    // describe('Request Fails if Email is not Unique', ()=>{
+    //     // beforeAll(async()=>{
+    //     //     response = await UserController.Signup({...Args})
+    
+    //     // })
+    //     it('returns error message of Email Exists', ()=>{
+    //         console.log({...Args})
+    //         expect(async ()=>{
+    //             await UserController.Signup({...Args})
+    //         }).toThrowError("User Exists")
+    //     })
+        
+    // })
     //  describe('Request Fails if Request Payload is Empty incomplete', ()=>{
     //     let incomplete = [omit('email', Args), omit('password', Args), omit('name', Args) ]
     //     beforeAll(async()=>{

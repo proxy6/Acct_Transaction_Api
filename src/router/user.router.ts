@@ -37,7 +37,7 @@ router.post('/login', async(req: Request, res: Response, next: NextFunction)=>{
     const data = await UserController.Login(value)
     if(data == undefined) return res.status(404).json({success: false, error: "User Does Not Exist"}) 
     if(data == false) return res.status(401).json({success: false, error: "Password Incorrect!"})
-    res.status(201).json({success: true, data})
+    res.status(201).json({success: true, ...data})
     
   }catch(e){
   res.json({success: false, error: e})
