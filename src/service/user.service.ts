@@ -21,6 +21,7 @@ class UserService{
            throw new Error('Unable to Signup User')
         }
    }
+   
    static async Login(data){
     const {email} = data
     try{

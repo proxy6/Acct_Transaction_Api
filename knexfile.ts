@@ -46,6 +46,7 @@ const dbConfig: { [key: string]: Knex.Config } = {
       user : 'root',
       password : '',
       database : "lenddb_test"
+      
     },  
     migrations: {
       tableName: 'knex_migrations'
