@@ -14,6 +14,9 @@
 ### Heroku Link
 https://lendapi.herokuapp.com/
 
+### UML Diagram
+![Alt text](./Flowcharts - UML Class.png?raw=true "Database Design Image")
+
 ### Database Design Image
 ![Alt text](./LendDB-Database-Design.png?raw=true "Database Design Image")
 
