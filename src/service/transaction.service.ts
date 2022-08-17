@@ -1,6 +1,14 @@
 import knex from "knex";
 import dbConfig from "../../knexfile";
-class TransactionService{
+class AccountService{
+    static async CreateAccount(data, account_number){
+        const knexDB = knex(dbConfig[process.env.NODE_ENV])
+        await knexDB('user_wallet').insert({
+            userId: data.id,
+            account_number,   
+        })
+        return
+    }
     static async Deposit(data){
         const knexDB = knex(dbConfig[process.env.NODE_ENV])
         const {amount, description, userId, reference, trx_type} = data
@@ -14,11 +22,9 @@ class TransactionService{
         await knexDB('transaction_logs').insert({userId, amount, reference, trx_type, description, status: true})
         return userWallet
         }
-    }catch(e){
-        
+        }catch(e){
             return e
         }
-
     }
     static async Withdraw(data){
         const {userId, amount, trx_type, reference, description,} = data
@@ -56,5 +62,20 @@ class TransactionService{
             return e
         }
     }
+    static async getAccountNumber(id){
+        const knexDB = knex(dbConfig[process.env.NODE_ENV])
+        const wallet = await knexDB('user_wallet')
+        .where({userId: id}).select('account_number').first()
+       
+        return wallet
+    }
+    static async getAccountDetails(account_number){
+        const knexDB = knex(dbConfig[process.env.NODE_ENV])
+        const wallet = await knexDB('user_wallet').where({account_number}).select('userId').first()
+        if(wallet == undefined) return wallet
+        const user = await knexDB('users').where({id: wallet.userId}).first()
+       
+        return user
+    }
 }
-export default TransactionService
+export default AccountService

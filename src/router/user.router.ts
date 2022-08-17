@@ -3,6 +3,7 @@ import { signUpValidation, loginValidation} from '../util/validation'
 import UserController from '../controller/user.controller'
 import { parseValidationError } from '../util/error'
 
+
 const router = Router()
 router.post('/signup', async (req: Request, res: Response, next: NextFunction)=>{
     const { error, value } = signUpValidation.validate(req.body)
@@ -40,7 +41,7 @@ router.post('/login', async(req: Request, res: Response, next: NextFunction)=>{
     res.status(201).json({success: true, ...data})
     
   }catch(e){
-  res.json({success: false, error: e})
+  res.status(404).json({success: false, error: e})
   }
 })
 // router.post('/login', login)

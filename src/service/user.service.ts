@@ -15,12 +15,8 @@ class UserService{
                 role: role || "user"
             })
             const user = await knexDB('users').where('id', newUser[0]).first()
-            await knexDB('user_wallet').insert({
-                userId: user.id   
-            })
-            const users = omit('password', user)
-            // newUser.password = ''
-            return users
+            const returnedUser = omit('password', user)
+            return returnedUser
         }catch(e){
            throw new Error('Unable to Signup User')
         }
@@ -30,7 +26,7 @@ class UserService{
     try{
         const knexDB = knex(dbConfig[process.env.NODE_ENV])
         const user = await knexDB('users').where({email}).first()
-        if(typeof user == undefined) return Promise.reject("User or Password Incorrect")
+        if(typeof user == undefined) return user
         return user
     }catch(e){
        return e 

@@ -21,5 +21,5 @@ export const transferValidation = Joi.object({
     amount: Joi.number().positive().required(),
     userId: Joi.number().required(),
     description: Joi.string(),
-    receiverId: Joi.number().required()
+    receiver: Joi.number().required()
 })

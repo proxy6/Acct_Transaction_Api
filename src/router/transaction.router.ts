@@ -1,8 +1,7 @@
-import { isAuthorized } from '../middleware/auth'
 import {NextFunction, Request, Response, Router} from 'express'
 import { walletValidation, transferValidation } from '../util/validation'
 import { parseValidationError } from '../util/error'
-import TransactionController from '../controller/transaction.controller'
+import AccountController from '../controller/transaction.controller'
 
 const router = Router()
 
@@ -18,7 +17,7 @@ router.post('/deposit', async (req: Request, res: Response, next: NextFunction)=
       });
     }
     try{
-        let deposit = await TransactionController.Deposit(value)
+        let deposit = await AccountController.Deposit(value)
         if(typeof deposit == 'object') return res.status(201).json({success: true, message: `${value.amount} Deposited Successfully`})
         return res.status(404).json({error: deposit});
     }catch(e){
@@ -38,7 +37,7 @@ router.post('/withdraw', async (req: Request, res: Response, next: NextFunction)
       })
     }
     try{
-      const withdraw = await TransactionController.Withdraw(value)
+      const withdraw = await AccountController.Withdraw(value)
       if(typeof withdraw == 'object') return res.status(201).json({success: true, message: `${value.amount} Withdrawn from Wallet Successfully`})
       return res.status(404).json({error: withdraw});
     }catch(e){
@@ -46,7 +45,6 @@ router.post('/withdraw', async (req: Request, res: Response, next: NextFunction)
     }
     
 })
-
 router.post('/transfer', async (req: Request, res: Response, next: NextFunction)=>{
      //validate request body
      const {error, value} = transferValidation.validate(req.body)
@@ -59,11 +57,11 @@ router.post('/transfer', async (req: Request, res: Response, next: NextFunction)
        })
      }
      try{
-       const withdraw = await TransactionController.Transfer(value)
-       if(typeof withdraw == 'object') return res.status(201).json({success: true, message: `${value.amount} Transer Successfully`})
+       const withdraw = await AccountController.Transfer(value)
+       if(typeof withdraw == 'object') return res.status(201).json({success: true, message: `${value.amount} Transferred Successfully`})
        return res.status(404).json({error: withdraw});
      }catch(e){
-       res.status(500).json({error: e})
+       res.status(404).json({error: e})
      }
      
 })

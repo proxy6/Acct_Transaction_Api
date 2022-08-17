@@ -16,3 +16,6 @@ https://lendapi.herokuapp.com/
 
 ### Database Design Image
 ![Alt text](./LendDB-Database-Design.png?raw=true "Database Design Image")
+
+### System Flowchart
+![Alt text](./System-Flowchart.png?raw=true "Database Design Image")

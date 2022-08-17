@@ -45,7 +45,7 @@
     "dev": "nodemon",
     "build": "rimraf ./dist && tsc",
     "start": "npm run build && node dist/src/index.js",
-    "test": "cross-env NODE_ENV=test jest --coverage",
+    "test": "cross-env NODE_ENV=test  jest --forceExit --runInBand",
     "migrate": "cross-env NODE_ENV=development knex migrate:latest  --knexfile knexfile.ts",
     "migrate-prod": "cross-env NODE_ENV=production knex migrate:latest  --knexfile knexfile.ts",
     "seed": "knex seed:run --knexfile knexfile.ts",
