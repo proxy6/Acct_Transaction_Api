@@ -11,9 +11,9 @@ export const MockUser = async () => {
 			password,
 			role: "user"
 		};
-	const user = await UserController.Signup(NewUser)
-	const deposit = await AccountController.Deposit({userId: user.id, amount: 5000})
-	const LoggedInUser = await UserController.Login({email, password})
+	const user = await UserController.signUp(NewUser)
+	const deposit = await AccountController.deposit({userId: user.id, amount: 5000})
+	const LoggedInUser = await UserController.login({email, password})
 	return  LoggedInUser
 };
 export const MockedUserTwo = async () => {
@@ -25,6 +25,6 @@ export const MockedUserTwo = async () => {
 			password,
 			role: "user"
 		};
-	const user = await UserController.Signup(NewUser)
+	const user = await UserController.signUp(NewUser)
 	return  user
 };

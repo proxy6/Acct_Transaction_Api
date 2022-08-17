@@ -4,7 +4,7 @@ import knex from 'knex'
 import {omit} from 'lodash/fp'
 
 class UserService{
-   static async SignUp(userData){
+   static async signUp(userData){
         const knexDB = knex(dbConfig[process.env.NODE_ENV])
         const {name, email, userPassword, role} = userData
         try{ 
@@ -21,8 +21,8 @@ class UserService{
            throw new Error('Unable to Signup User')
         }
    }
-   
-   static async Login(data){
+
+   static async login(data){
     const {email} = data
     try{
         const knexDB = knex(dbConfig[process.env.NODE_ENV])

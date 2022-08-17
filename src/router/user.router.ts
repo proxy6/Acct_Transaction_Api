@@ -17,7 +17,7 @@ router.post('/signup', async (req: Request, res: Response, next: NextFunction)=>
     }
     const {name, email, password, role} = value
     try{
-      const data = await UserController.Signup({name, email, password, role})
+      const data = await UserController.signUp({name, email, password, role})
       if(typeof data == 'object') return res.status(201).json({success: true, ...data})
       return res.status(404).json({success: false, error: data})
     }catch(e){
@@ -35,7 +35,7 @@ router.post('/login', async(req: Request, res: Response, next: NextFunction)=>{
     })
   }
   try{
-    const data = await UserController.Login(value)
+    const data = await UserController.login(value)
     if(data == undefined) return res.status(404).json({success: false, error: "User Does Not Exist"}) 
     if(data == false) return res.status(401).json({success: false, error: "Password Incorrect!"})
     res.status(201).json({success: true, ...data})

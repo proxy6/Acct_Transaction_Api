@@ -17,7 +17,7 @@ router.post('/deposit', async (req: Request, res: Response, next: NextFunction)=
       });
     }
     try{
-        let deposit = await AccountController.Deposit(value)
+        let deposit = await AccountController.deposit(value)
         if(typeof deposit == 'object') return res.status(201).json({success: true, message: `${value.amount} Deposited Successfully`})
         return res.status(404).json({error: deposit});
     }catch(e){
@@ -37,7 +37,7 @@ router.post('/withdraw', async (req: Request, res: Response, next: NextFunction)
       })
     }
     try{
-      const withdraw = await AccountController.Withdraw(value)
+      const withdraw = await AccountController.withdraw(value)
       if(typeof withdraw == 'object') return res.status(201).json({success: true, message: `${value.amount} Withdrawn from Wallet Successfully`})
       return res.status(404).json({error: withdraw});
     }catch(e){
@@ -57,7 +57,7 @@ router.post('/transfer', async (req: Request, res: Response, next: NextFunction)
        })
      }
      try{
-       const withdraw = await AccountController.Transfer(value)
+       const withdraw = await AccountController.transfer(value)
        if(typeof withdraw == 'object') return res.status(201).json({success: true, message: `${value.amount} Transferred Successfully`})
        return res.status(404).json({error: withdraw});
      }catch(e){

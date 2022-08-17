@@ -24,7 +24,7 @@ describe('USER Login', ()=>{
     beforeAll(async ()=>{
         try{
         await knexDB.migrate.latest();
-        user = await UserController.Signup(Args)
+        user = await UserController.signUp(Args)
         }catch(e){
             console.log(e)
         }

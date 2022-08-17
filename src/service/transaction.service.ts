@@ -1,7 +1,7 @@
 import knex from "knex";
 import dbConfig from "../../knexfile";
 class AccountService{
-    static async CreateAccount(data, account_number){
+    static async createAccount(data, account_number){
         const knexDB = knex(dbConfig[process.env.NODE_ENV])
         await knexDB('user_wallet').insert({
             userId: data.id,
@@ -9,7 +9,7 @@ class AccountService{
         })
         return
     }
-    static async Deposit(data){
+    static async deposit(data){
         const knexDB = knex(dbConfig[process.env.NODE_ENV])
         const {amount, description, userId, reference, trx_type} = data
         try{
@@ -26,7 +26,7 @@ class AccountService{
             return e
         }
     }
-    static async Withdraw(data){
+    static async withdraw(data){
         const {userId, amount, trx_type, reference, description,} = data
         const knexDB = knex(dbConfig[process.env.NODE_ENV])
         //check if balance is sufficient
@@ -44,7 +44,7 @@ class AccountService{
         }
 
     }
-    static async Transfer(data){
+    static async transfer(data){
         const {userId, amount, receiverId, trx_type,description, reference} = data
         const knexDB = knex(dbConfig[process.env.NODE_ENV])
         try{
