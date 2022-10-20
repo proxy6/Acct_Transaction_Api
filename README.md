@@ -28,3 +28,10 @@ https://acct-transaction.herokuapp.com/
 
 ### System Flowchart
 ![Alt text](./System-Flowcharts.png?raw=true "Database Design Image")
+
+### Tech Stack
+- Typescript
+- Knex 
+- Docker
+- Jest
+- Supertest
