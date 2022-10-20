@@ -6,7 +6,7 @@ import { isAuthorized } from '../middleware/auth';
 const router = Router();
 
 router.get('/', (req, res)=>{
-    res.status(200).send("Welcome to LendSQR API ")
+    res.status(200).send("Welcome to Account Transaction API ")
 })
 router.use('/identity', UserRoute);
 router.use('/transaction', isAuthorized('user'), transaction)

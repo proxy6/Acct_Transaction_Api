@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Test run docker build
-        run: docker build -t lendapi .
+        run: docker build -t acct-transaction .
 
   deploy:
     needs: image-build
@@ -23,7 +23,7 @@ jobs:
         name: Deploy to Heroku
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: "lendapi"
+          heroku_app_name: "acct-transaction"
           heroku_email: ${{secrets.DEPLOY_EMAIL}}
           usedocker: true
           docker_build_args: |

@@ -52,10 +52,10 @@
 									}
 								},
 								"url": {
-									"raw": "http://lendapi.herokuapp.com/identity/signup",
+									"raw": "http://acct-transactio.herokuapp.com/identity/signup",
 									"protocol": "http",
 									"host": [
-										"lendapi",
+										"acct-transactio",
 										"herokuapp",
 										"com"
 									],
@@ -120,10 +120,10 @@
 									}
 								},
 								"url": {
-									"raw": "http://lendapi.herokuapp.com/identity/signup",
+									"raw": "http://acct-transactio.herokuapp.com/identity/signup",
 									"protocol": "http",
 									"host": [
-										"lendapi",
+										"acct-transactio",
 										"herokuapp",
 										"com"
 									],
@@ -188,10 +188,10 @@
 									}
 								},
 								"url": {
-									"raw": "http://lendapi.herokuapp.com/identity/signup",
+									"raw": "http://acct-transactio.herokuapp.com/identity/signup",
 									"protocol": "http",
 									"host": [
-										"lendapi",
+										"acct-transactio",
 										"herokuapp",
 										"com"
 									],
@@ -258,10 +258,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://lendapi.herokuapp.com/identity/login",
+							"raw": "http://acct-transactio.herokuapp.com/identity/login",
 							"protocol": "http",
 							"host": [
-								"lendapi",
+								"acct-transactio",
 								"herokuapp",
 								"com"
 							],
@@ -287,10 +287,10 @@
 									}
 								},
 								"url": {
-									"raw": "http://lendapi.herokuapp.com/identity/login",
+									"raw": "http://acct-transactio.herokuapp.com/identity/login",
 									"protocol": "http",
 									"host": [
-										"lendapi",
+										"acct-transactio",
 										"herokuapp",
 										"com"
 									],
@@ -355,10 +355,10 @@
 									}
 								},
 								"url": {
-									"raw": "http://lendapi.herokuapp.com/identity/login",
+									"raw": "http://acct-transactio.herokuapp.com/identity/login",
 									"protocol": "http",
 									"host": [
-										"lendapi",
+										"acct-transactio",
 										"herokuapp",
 										"com"
 									],
@@ -423,10 +423,10 @@
 									}
 								},
 								"url": {
-									"raw": "http://lendapi.herokuapp.com/identity/login",
+									"raw": "http://acct-transactio.herokuapp.com/identity/login",
 									"protocol": "http",
 									"host": [
-										"lendapi",
+										"acct-transactio",
 										"herokuapp",
 										"com"
 									],
@@ -514,10 +514,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://lendapi.herokuapp.com/transaction/deposit",
+							"raw": "http://acct-transactio.herokuapp.com/transaction/deposit",
 							"protocol": "http",
 							"host": [
-								"lendapi",
+								"acct-transactio",
 								"herokuapp",
 								"com"
 							],
@@ -549,10 +549,10 @@
 									}
 								},
 								"url": {
-									"raw": "http://lendapi.herokuapp.com/transaction/deposit",
+									"raw": "http://acct-transactio.herokuapp.com/transaction/deposit",
 									"protocol": "http",
 									"host": [
-										"lendapi",
+										"acct-transactio",
 										"herokuapp",
 										"com"
 									],
@@ -623,10 +623,10 @@
 									}
 								},
 								"url": {
-									"raw": "http://lendapi.herokuapp.com/transaction/deposit",
+									"raw": "http://acct-transactio.herokuapp.com/transaction/deposit",
 									"protocol": "http",
 									"host": [
-										"lendapi",
+										"acct-transactio",
 										"herokuapp",
 										"com"
 									],
@@ -697,10 +697,10 @@
 									}
 								},
 								"url": {
-									"raw": "http://lendapi.herokuapp.com/transaction/deposit",
+									"raw": "http://acct-transactio.herokuapp.com/transaction/deposit",
 									"protocol": "http",
 									"host": [
-										"lendapi",
+										"acct-transactio",
 										"herokuapp",
 										"com"
 									],
@@ -767,10 +767,10 @@
 									}
 								},
 								"url": {
-									"raw": "http://lendapi.herokuapp.com/transaction/deposit",
+									"raw": "http://acct-transactio.herokuapp.com/transaction/deposit",
 									"protocol": "http",
 									"host": [
-										"lendapi",
+										"acct-transactio",
 										"herokuapp",
 										"com"
 									],
@@ -843,10 +843,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://lendapi.herokuapp.com/transaction/withdraw",
+							"raw": "http://acct-transactio.herokuapp.com/transaction/withdraw",
 							"protocol": "http",
 							"host": [
-								"lendapi",
+								"acct-transactio",
 								"herokuapp",
 								"com"
 							],
@@ -878,10 +878,10 @@
 									}
 								},
 								"url": {
-									"raw": "http://lendapi.herokuapp.com/transaction/withdraw",
+									"raw": "http://acct-transactio.herokuapp.com/transaction/withdraw",
 									"protocol": "http",
 									"host": [
-										"lendapi",
+										"acct-transactio",
 										"herokuapp",
 										"com"
 									],
@@ -952,10 +952,10 @@
 									}
 								},
 								"url": {
-									"raw": "http://lendapi.herokuapp.com/transaction/withdraw",
+									"raw": "http://acct-transactio.herokuapp.com/transaction/withdraw",
 									"protocol": "http",
 									"host": [
-										"lendapi",
+										"acct-transactio",
 										"herokuapp",
 										"com"
 									],
@@ -1027,10 +1027,10 @@
 									}
 								},
 								"url": {
-									"raw": "http://lendapi.herokuapp.com/transaction/withdraw",
+									"raw": "http://acct-transactio.herokuapp.com/transaction/withdraw",
 									"protocol": "http",
 									"host": [
-										"lendapi",
+										"acct-transactio",
 										"herokuapp",
 										"com"
 									],
@@ -1101,10 +1101,10 @@
 									}
 								},
 								"url": {
-									"raw": "http://lendapi.herokuapp.com/transaction/withdraw",
+									"raw": "http://acct-transactio.herokuapp.com/transaction/withdraw",
 									"protocol": "http",
 									"host": [
-										"lendapi",
+										"acct-transactio",
 										"herokuapp",
 										"com"
 									],
@@ -1175,10 +1175,10 @@
 									}
 								},
 								"url": {
-									"raw": "http://lendapi.herokuapp.com/transaction/withdraw",
+									"raw": "http://acct-transactio.herokuapp.com/transaction/withdraw",
 									"protocol": "http",
 									"host": [
-										"lendapi",
+										"acct-transactio",
 										"herokuapp",
 										"com"
 									],
@@ -1251,10 +1251,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://lendapi.herokuapp.com/transaction/transfer",
+							"raw": "http://acct-transactio.herokuapp.com/transaction/transfer",
 							"protocol": "http",
 							"host": [
-								"lendapi",
+								"acct-transactio",
 								"herokuapp",
 								"com"
 							],
@@ -1286,10 +1286,10 @@
 									}
 								},
 								"url": {
-									"raw": "http://lendapi.herokuapp.com/transaction/transfer",
+									"raw": "http://acct-transactio.herokuapp.com/transaction/transfer",
 									"protocol": "http",
 									"host": [
-										"lendapi",
+										"acct-transactio",
 										"herokuapp",
 										"com"
 									],
@@ -1360,10 +1360,10 @@
 									}
 								},
 								"url": {
-									"raw": "http://lendapi.herokuapp.com/transaction/transfer",
+									"raw": "http://acct-transactio.herokuapp.com/transaction/transfer",
 									"protocol": "http",
 									"host": [
-										"lendapi",
+										"acct-transactio",
 										"herokuapp",
 										"com"
 									],
@@ -1434,10 +1434,10 @@
 									}
 								},
 								"url": {
-									"raw": "http://lendapi.herokuapp.com/transaction/transfer",
+									"raw": "http://acct-transactio.herokuapp.com/transaction/transfer",
 									"protocol": "http",
 									"host": [
-										"lendapi",
+										"acct-transactio",
 										"herokuapp",
 										"com"
 									],
@@ -1504,10 +1504,10 @@
 									}
 								},
 								"url": {
-									"raw": "http://lendapi.herokuapp.com/transaction/transfer",
+									"raw": "http://acct-transactio.herokuapp.com/transaction/transfer",
 									"protocol": "http",
 									"host": [
-										"lendapi",
+										"acct-transactio",
 										"herokuapp",
 										"com"
 									],
@@ -1572,10 +1572,10 @@
 									}
 								},
 								"url": {
-									"raw": "http://lendapi.herokuapp.com/transaction/transfer",
+									"raw": "http://acct-transactio.herokuapp.com/transaction/transfer",
 									"protocol": "http",
 									"host": [
-										"lendapi",
+										"acct-transactio",
 										"herokuapp",
 										"com"
 									],
@@ -1646,10 +1646,10 @@
 									}
 								},
 								"url": {
-									"raw": "http://lendapi.herokuapp.com/transaction/transfer",
+									"raw": "http://acct-transactio.herokuapp.com/transaction/transfer",
 									"protocol": "http",
 									"host": [
-										"lendapi",
+										"acct-transactio",
 										"herokuapp",
 										"com"
 									],
@@ -1720,10 +1720,10 @@
 									}
 								},
 								"url": {
-									"raw": "http://lendapi.herokuapp.com/transaction/transfer",
+									"raw": "http://acct-transactio.herokuapp.com/transaction/transfer",
 									"protocol": "http",
 									"host": [
-										"lendapi",
+										"acct-transactio",
 										"herokuapp",
 										"com"
 									],

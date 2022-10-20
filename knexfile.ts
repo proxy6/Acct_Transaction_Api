@@ -8,11 +8,11 @@ const dbConfig: { [key: string]: Knex.Config } = {
   production: {
     client: "mysql",
     connection: {
-      host : 'db4free.net',
+      host : process.env.DB_HOST,
       port : 3306,
-      database: 'lenddb',
-      user:'lenddb_root',
-      password: 'lenddb_root'
+      database: process.env.DB_NAME,
+      user:process.env.DB_USER,
+      password: process.env.DB_PASSWORD
     },
     pool: {
       min: 2,
@@ -30,7 +30,7 @@ const dbConfig: { [key: string]: Knex.Config } = {
       port : 3306,
       user : 'root',
       password : '',
-      database : "lenddb"
+      database : `${process.env.DB_DATABASE}`
     },
     migrations: {
       tableName: 'knex_migrations'
@@ -45,7 +45,7 @@ const dbConfig: { [key: string]: Knex.Config } = {
       port : 3306,
       user : 'root',
       password : '',
-      database : "lenddb_test"
+      database : `${process.env.DB_DATABASE_TEST}`
       
     },  
     migrations: {

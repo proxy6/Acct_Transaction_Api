@@ -1,5 +1,5 @@
 FROM node:14.16-alpine as development
-WORKDIR /lendapi
+WORKDIR /acct-transaction
 COPY package*.json ./
 RUN npm install
 COPY . .
@@ -10,7 +10,7 @@ FROM node:14.16-alpine as production
 WORKDIR /dist
 COPY package*.json ./
 RUN npm install
-COPY --from=development /lendapi/dist ./
+COPY --from=development /acct-transaction/dist ./
 
 CMD ["node", "src/index.js"]
 

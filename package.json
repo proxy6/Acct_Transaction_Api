@@ -54,13 +54,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/proxy6/LEND_SQR_API_TEST.git"
+    "url": "git+https://github.com/proxy6/Acct_Transaction_Api.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/proxy6/LEND_SQR_API_TEST.git/issues"
+    "url": "https://github.com/proxy6/Acct_Transaction_Api.git/issues"
   },
-  "homepage": "https://github.com/proxy6/LEND_SQR_API_TEST.git#readme"
+  "homepage": "https://github.com/proxy6/Acct_Transaction_Api.git#readme"
 }
